@@ -1,0 +1,61 @@
+div {
+  color: white; 
+}
+
+a {
+  color: #00716b;
+  background-color: white;
+}
+
+label {
+  margin-right: 25px;
+}
+
+.redText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body{
+  background-image: url('../images/lineage_picture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.laas_textbox{
+  float: right;
+}
+
+.collections{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.primary_button {
+  background-color: rgb(255, 210, 0);
+  color: rgb(34, 34, 34);
+  border: none;
+  height: 30px;
+  align-items: center;
+  appearance: button;
+  border-radius: 0.129em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  padding: 0 25px;
+}
+
+.cta_div {
+  display: flex;
+  justify-content: end;
+}
+
+.position_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
