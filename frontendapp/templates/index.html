@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .hideDiv {
+    display: none;
+  }
+  .radio_label {
+    font-size: 18px
+  }
+</style>
+<div class="redText">
+
+    <form id= "firstForm" method="post">
+        {%csrf_token%}
+        
+        <h2>Application Onboarding Page</h2>
+        
+        <div>
+        <input type="radio" id="azure_option" name="application_type" value="azure" onchange="showDropdownOptions(this)">
+        <label class="radio_label" for="azure_option">Azure</label> 
+         
+        <input type="radio" id="informatica_option" name="application_type" value="informatica"  onchange="showDropdownOptions(this)">
+        <label class="radio_label" for="informatica_option">Informatica</label>
+        
+        <input type="radio" id="mainframe_option" name="application_type" value="mainframe"  onchange="showDropdownOptions(this)">
+        <label class="radio_label" for="mainframe_option">Mainframe</label> 
+        </div>
+
+        <!-- AZURE -->
+        <div id="azure" class="hideDiv">         
+          <label for="system">Select your azure system</label>
+          <select name="azures" id="az">
+            <option value="Azuredatalake">ADLS Gen 2</option>
+            <option value="BlobStorage">BlobStorage</option>
+            <option value="dataFactory">dataFactory</option>           
+          </select>
+          <div class="label-group"></div>
+          <label for = "solintent">Solution Intent Link</label>
+          <input class="laas_textbox" type = "text" id ="solintent" name="solintent" required><br><br>
+
+          <div class="label-group"></div>
+          <label for = "oardatafrom">OAR-Getting Data From</label>
+          <input class="laas_textbox" type = "text" id ="oardatafrom" name="oardatafrom" required><br><br>
+          
+          <div class="label-group"></div>
+          <label for = "oardatato">OAR-Getting Data To</label>
+          <input class="laas_textbox" type = "text" id ="oardatato" name="oardatato" required><br><br>
+
+          <div class="label-group"></div>
+          <label for="envi">Environment</label>
+          <select name="envs" id="envs">
+            <option value="Development">Development</option>
+            <option value="Test">Test</option>
+            <option value="Acceptance">Acceptance</option>
+            <option value="Production">Production</option>           
+          </select>
+
+          <div class="label-group"></div>
+          <label for = "hoplayer">Data Hop Zone/Layers</label>
+          <input class="laas_textbox" type = "text" id ="hoplayer" name="hoplayer" required><br><br>
+          
+          <!-- <div class="label-group"></div>
+          <label for = "finallayer">Final layer/Zone</label>
+          <input class="laas_textbox" type = "text" id ="finallayer" name="finallayer" required><br><br>
+           -->
+          <div class="label-group"></div>
+          <label for="completiondate">Target Completion Date</label>
+          <input type="date" id="completiondate" name="completiondate" required><br><br>
+          
+          <h4>please click below to create collection in Purview</h4>
+          <input type="submit"/>
+        </div>
+        <!-- informatica -->
+        <div id="informatica" class="hideDiv">
+          <label for="system">Select your informatica system</label>
+          <select name="informaticas" id="informaticas">
+            <option value="Informat">Informatica</option>  
+          </select>
+          <h4>please click below to go to EDC</h4>
+          <a href="EDC">EDC</a>
+        </div>
+        <!-- mainframe -->
+        <div id="mainframe" class="hideDiv">
+          <label for="system">Select your mainframe system</label>
+          <select name="mainframes" id="mainframes">
+            <option value="mainfram">Mainframe</option>  
+          </select>
+          <h4>please click below to go to Solidatus</h4>
+          <a href="solidatus">Solidatus</a>
+        </div>
+      
+        
+        
+    </form>
+
+    <!-- ParentCollectionName: <input type="text" name="parentcollectionname" placeholder="MDC">
+    something else: <input type="text" name="collectionname" > -->
+</div>
+
+<script>
+function showDropdownOptions(radio) {
+    let divId=radio.value;
+    let div=document.getElementById(divId);
+    //hide all divs
+    let allDivs=document.querySelectorAll('.hideDiv');
+    allDivs.forEach(function(div){
+        div.style.display='none';
+    });
+    //show selected div
+    div.style.display = 'block';
+    //print("divId:", div)
+    if(divId.getElementById() === 'azure'){
+      form.action = "{% url 'save_collection' %}";
+    };
+}
+</script>
+{% endblock %}

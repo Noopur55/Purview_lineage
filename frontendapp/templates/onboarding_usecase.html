@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="collections">
+<form method="post">
+    {%csrf_token%}
+    <h2>SYSTEM ONBOARDING PAGE</h2>
+        <div class="label-group">
+          <label for = "oarid">OARID</label>
+          <input class="laas_textbox" type = "text" id ="oarid" name="oarid" required><br><br>
+
+        <div class="label-group"></div>
+          <label for = "oarstatus">OAR Status</label>
+          <input class="laas_textbox" type = "text" id ="oarstatus" name="oarstatus" required><br><br>
+
+        <div class="label-group"></div>
+          <label for = "team">TEAM NAME</label>
+          <input class="laas_textbox" type = "text" id ="team" name="team" required><br><br>
+
+        <div class="label-group"></div>
+          <label for = "ucid">USECASE ID</label>
+          <input class="laas_textbox" type = "text" id ="ucid" name="ucid" required><br><br>
+        
+        <div class="label-group"></div>
+          <label for = "ucowner">Use Case Owner</label>
+          <input class="laas_textbox" type = "text" id ="ucowner" name="ucowner" required><br><br>
+        
+        <div class="label-group"></div>
+          <label for = "gowner">Grid Owner</label>
+          <input class="laas_textbox" type = "text" id ="gowner" name="gowner" required><br><br>
+        <div class="label-group"></div>
+          <label for = "po">Product Owner</label>
+          <input class="laas_textbox" type = "text" id ="po" name="po" required><br><br>
+        
+        <div class="label-group"></div>
+          <label for = "cntct">Dedicated Contact</label>
+          <input class="laas_textbox" type = "text" id ="cntct" name="cntct" required><br><br>
+
+        <div class="label-group"></div>
+          <label for="goldersource">Is Golden Source</label>
+          <input type="radio" id="goldersource" name="goldersource" value="goldersourceyes" >
+          <label class="radio_label" for="goldersource">yes</label>
+          <input type="radio" id="goldersource" name="goldersource" value="goldersourceno" >
+          <label class="radio_label" for="goldersource">no</label>
+
+        <div class="label-group"></div>
+          <label for="datatodial">Is Data sending to DIAL</label>
+          <input type="radio" id="datatodial" name="datatodial" value="datatodialyes" >
+          <label class="radio_label" for="datatodial">yes</label>
+          <input type="radio" id="datatodial" name="datatodial" value="datatodialno" >
+          <label class="radio_label" for="datatodial">no</label>
+        <div class="cta_div"><button class="primary_button" type="submit">SAVE</button></div>
+        </div>
+
+</form>  <br>  <br>
+</div>
+{% endblock %}

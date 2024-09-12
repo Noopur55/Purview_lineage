@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="collections">
+<form method="post" action="{% url 'save_collection_to_purview' %}">
+    {%csrf_token%}
+    <label for = "parentcollectionname">Parent_Collection_Name:</label>
+    <input class="laas_textbox" type = "text" id ="parentcollectionname" name="parentcollectionname" required placeholder="MDC"><br><br>
+
+    <label for = "collectionname">CollectionName:</label>
+    <input class="laas_textbox" type = "text" id ="collectionname" name="collectionname" required><br><br>
+    <div class="cta_div"><button class="primary_button" type="submit">SAVE</button></div>
+    
+</form>  <br>  <br>
+</div>
+{% endblock %}

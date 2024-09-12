@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="collections">
+<form method="post" action="{% url 'role_assignmentss' %}">
+    {%csrf_token%}
+    <label for = "objectid">Please add your AGF groupd id:</label>
+    <input class="laas_textbox" type = "text" id ="objectid" name="objectid"><br><br>
+    <div class="cta_div">
+      <button class="primary_button" type="submit">SAVE</button>
+    </div>
+</form>  <br>  <br>
+</div>
+{% endblock %}
